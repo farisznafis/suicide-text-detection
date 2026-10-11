@@ -1,0 +1,4 @@
+dataset/
+model/rf.pickle
+.ipynb_checkpoints/
+__pycache__/
