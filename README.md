@@ -35,7 +35,7 @@ Test set: 46,415 posts.
 | Model | Accuracy | F1 (weighted) | Model file |
 |-------|---------:|--------------:|------------|
 | **LightGBM** (lr 0.05, 1000 trees) | **0.95** | **0.95** | `model/lgbm.pickle` (3.8 MB) |
-| Random Forest (100 trees, entropy) | 0.90 | 0.90 | `rf.pickle` (226 MB, see below) |
+| Random Forest (100 trees, entropy) | 0.90 | 0.90 | not distributed (226 MB) |
 | Gaussian Naive Bayes | 0.84 | 0.83 | `model/nb.pickle` |
 
 | LightGBM | Random Forest | Naive Bayes |
@@ -50,7 +50,19 @@ Test set: 46,415 posts.
 ## Models
 
 `model/tfidf.pickle`, `model/lgbm.pickle`, `model/nb.pickle` are included.
-`rf.pickle` exceeds GitHub's 100 MB limit — download `rf.zip` from the [Releases](https://github.com/farisznafis/suicide-text-detection/releases) page and extract it into `model/`.
+`rf.pickle` (226 MB) is not distributed; regenerate it with `classifier.ipynb`.
+
+## Web app
+
+[`app.py`](app.py) is a Streamlit demo using the LightGBM model.
+
+```
+pip install -r requirements.txt
+streamlit run app.py
+```
+
+Deploy on [Streamlit Community Cloud](https://share.streamlit.io): New app → this repo → main file `app.py` → Advanced settings → Python 3.12.
+`requirements.txt` pins scikit-learn 1.3.2 / LightGBM 4.1.0 — the versions the pickles were trained with.
 
 Quick prediction with the best model (same steps as the *Testing* section of `classifier.ipynb`):
 
