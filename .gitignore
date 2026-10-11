@@ -2,3 +2,4 @@ dataset/
 model/rf.pickle
 .ipynb_checkpoints/
 __pycache__/
+model/rf.zip

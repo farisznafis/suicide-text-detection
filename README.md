@@ -50,7 +50,7 @@ Test set: 46,415 posts.
 ## Models
 
 `model/tfidf.pickle`, `model/lgbm.pickle`, `model/nb.pickle` are included.
-`rf.pickle` exceeds GitHub's 100 MB limit — download it from the [Releases](https://github.com/farisznafis/suicide-text-detection/releases) page into `model/`.
+`rf.pickle` exceeds GitHub's 100 MB limit — download `rf.zip` from the [Releases](https://github.com/farisznafis/suicide-text-detection/releases) page and extract it into `model/`.
 
 Quick prediction with the best model (same steps as the *Testing* section of `classifier.ipynb`):
 
